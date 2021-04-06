@@ -51,10 +51,11 @@ public class Task1_2 {
 
             // Если выбрали умножение:
             case '*':
-                System.out.printf("Произведение чисел равно: ", (x*y));
+                System.out.printf("Произведение чисел равно: %.4f", (x*y));
                 break;
             default:
                 System.out.println("Арифметическая операция введена неверно!!!");
         }
+        sc.close();
     }
 }
