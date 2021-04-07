@@ -1,3 +1,8 @@
+/**
+ * Created 08.04.2021
+ * @author Klepko Grigoriy
+ * App for finding the largest negative and the smallest positive number and replacing them with places
+ */
 public class Task4 {
     public static void main(String[] args) {
 
