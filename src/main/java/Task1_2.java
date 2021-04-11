@@ -1,20 +1,18 @@
+import java.util.Scanner;
+
 /**
  * Created 06.04.2021
  * @author Klepko Grigoriy
- *
  * Classes calculation
  * Пользователь указывает два числа и арифметическое действие
  * и в результате получает результат с округлением до 4 знаков
  * после запятой.
  */
-
-import java.util.Scanner;
-
 public class Task1_2 {
 
     public static void main(String[] args) {
 
-        // Считываем с клавиатуры два числа:
+        //* Считываем с клавиатуры два числа:
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите первое число: ");
         double x = sc.nextDouble();
