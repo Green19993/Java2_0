@@ -1,11 +1,10 @@
+import java.util.Scanner;
+
 /**
  * Created 07.04.2021
  * @author Klepko Grigoriy
  * App for calculations numbers or find max length word
  */
-
-import java.util.Scanner;
-
 public class Task3 {
     public static void main(String[] args) {
 
@@ -92,9 +91,11 @@ public class Task3 {
         }
         // Нахождение самого длинного слова в массиве:
         String maxString = array[0];
-        for (int i = 0; i < arrayLength - 1; i++) {
-            if (array[i].length() < array[i+1].length()) {
-                maxString = array[i+1];
+        int maxIndex = 0;
+        for (int i = 0; i < arrayLength; i++) {
+            if (array[i].length() > array[maxIndex].length()) {
+                maxIndex = i;
+                maxString = array[maxIndex];
             }
         }
         System.out.println("Самое длинное слово это: " + maxString);

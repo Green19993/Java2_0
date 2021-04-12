@@ -12,7 +12,7 @@ public class Task1_2 {
 
     public static void main(String[] args) {
 
-        //* Считываем с клавиатуры два числа:
+        // Считываем с клавиатуры два числа:
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите первое число: ");
         double x = sc.nextDouble();
