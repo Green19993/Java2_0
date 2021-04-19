@@ -18,9 +18,11 @@ public class Task4 {
         int maxNegative = 0; // Индекс наибольшего отрицательного значения
         int minPositive = 0; // Индекс наименьшего положительного значения
 
-        // Чтобы значения оказались в "нужном" диапазоне создаю цикл.
-        // Т.е. maxNegative сравнивал среди отрицательных чисел, а minPositive - среди положительных
-        // Если все числа из одного диапазона, то сделаю счётчик posAndNeg, чтобы цикл не оказался бесконечным
+        /*
+         Чтобы значения оказались в "нужном" диапазоне создаю цикл.
+         Т.е. maxNegative сравнивал среди отрицательных чисел, а minPositive - среди положительных
+         Если все числа из одного диапазона, то сделаю счётчик posAndNeg, чтобы цикл не оказался бесконечным
+         */
         int posAndNeg = (array.length - 1);
         do {
             if (posAndNeg == 0){break;}
@@ -38,13 +40,13 @@ public class Task4 {
         for (int i = 0; i < array.length; i++) {
             // Отрацательные элементы:
             if (array[i] < 0) {
-                if (array[maxNegative] <= array[i]) {
+                if (array[maxNegative] <= array[i] || array[maxNegative] == 0) { // Исключаем ноль
                     maxNegative = i;
                 }
                 countNegative++;
-            } else {
+            } else if (array[i] > 0){
                 // Положительные элементы:
-                if (array[minPositive] >= array[i]) {
+                if (array[minPositive] > array[i] || array[minPositive] == 0) { // Исключаем ноль
                     minPositive = i;
                 }
                 countPositive++;
@@ -60,7 +62,7 @@ public class Task4 {
 
         // Для понимания, что меняется:
         if (countNegative !=0 && countPositive != 0) {
-            System.out.println("Меняем местами элементы: " + (minPositive + 1) + " и " + (maxNegative + 1));
+            System.out.println("Меняем местами элементы: " + (minPositive + 1) + " (= " + array[minPositive] + ") и " + (maxNegative + 1) + " (= " + array[maxNegative] + ")");
         }
         // Проверка, что все числа не оказались положительными или отрицательными:
         if (countNegative != 0 && countPositive != 0){
