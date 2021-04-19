@@ -15,40 +15,20 @@ public class Task4_2 {
         Scanner scan = new Scanner(System.in);
 
         // Создание сладостей и указание веса для подарка
-        System.out.println("Введите вес конфет Сникерс: ");
-        Candy snikers = new Candy();
-        snikers.setWeight(scan.nextDouble());
-        snikers.setName("Сникерс");
-        snikers.setFilling("Нуга");
-        snikers.setPrice(550);
+        System.out.println("Введите вес конфет Сникерс в кг: ");
+        Candy snikers = new Candy("Сникерс", scan.nextDouble(), 550, "Нуга" );
 
-        System.out.println("Введите вес конфет Марс: ");
-        Candy mars = new Candy();
-        mars.setWeight(scan.nextDouble());
-        mars.setName("Марс");
-        mars.setFilling("Карамель");
-        mars.setPrice(535);
+        System.out.println("Введите вес конфет Марс в кг: ");
+        Candy mars = new Candy("Марс", scan.nextDouble(), 535, "Карамель");
 
-        System.out.println("Введите вес мармеладных динозавров: ");
-        Jellybean dino = new Jellybean();
-        dino.setWeight(scan.nextDouble());
-        dino.setName("Дино");
-        dino.setColor("Зелёный");
-        dino.setPrice(425);
+        System.out.println("Введите вес мармеладных динозавров в кг: ");
+        Jellybean dino = new Jellybean("Дино", scan.nextDouble(), 425,"Зелёный");
 
-        System.out.println("Введите вес Бабаевского шоколада: ");
-        Chocolate babaev = new Chocolate();
-        babaev.setWeight(scan.nextDouble());
-        babaev.setName("Бабаевский");
-        babaev.setTaste("Горький");
-        babaev.setPrice(560);
+        System.out.println("Введите вес Бабаевского шоколада в кг: ");
+        Chocolate babaev = new Chocolate("Бабаевский", scan.nextDouble(), 510, "Горький");
 
-        System.out.println("Введите вес шоколада Альпен Гольд: ");
-        Chocolate alpenGold = new Chocolate();
-        alpenGold.setWeight(scan.nextDouble());
-        alpenGold.setName("Альпен Гольд");
-        alpenGold.setTaste("Солёный");
-        alpenGold.setPrice(600);
+        System.out.println("Введите вес шоколада Альпен Гольд в кг: ");
+        Chocolate alpenGold = new Chocolate("Альпен Гольд", scan.nextDouble(), 600, "Солёный");
 
         scan.close();
 
@@ -60,8 +40,8 @@ public class Task4_2 {
         double totalWeight = snikers.getWeight() + mars.getWeight() + dino.getWeight() + babaev.getWeight() + alpenGold.getWeight();
 
         System.out.println("Состав подарка:");
-        Surprise [] boxPresent = {snikers, mars, dino, babaev, alpenGold};
-        for (Surprise box : boxPresent) {
+        Surprise [] boxSurprise = {snikers, mars, dino, babaev, alpenGold};
+        for (Surprise box : boxSurprise) {
             System.out.println(box.toString());
         }
 
