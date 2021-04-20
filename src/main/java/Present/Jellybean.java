@@ -17,4 +17,8 @@ public class Jellybean extends Surprise {
     public void setColor(String color) {
         this.color = color;
     }
+
+    public String toString() {
+        return "Конфеты " + super.getName() + ", цвет " + color + ", в подарке: " + super.getWeight() + " кг";
+    }
 }

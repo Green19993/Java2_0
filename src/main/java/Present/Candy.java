@@ -17,4 +17,8 @@ public class Candy extends Surprise {
     public void setFilling(String filling) {
         this.filling = filling;
     }
+
+    public String toString() {
+        return "Конфеты " + super.getName() + ", начинка " + filling + ", в подарке: " + super.getWeight() + " кг";
+    }
 }

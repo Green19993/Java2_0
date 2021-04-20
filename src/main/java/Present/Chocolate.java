@@ -18,5 +18,9 @@ public class Chocolate extends Surprise {
     public void setTaste(String taste) {
         this.taste = taste;
     }
+
+    public String toString() {
+        return "Конфеты " + super.getName() + ", вкус " + taste + ", в подарке: " + super.getWeight() + " кг";
+    }
 }
 

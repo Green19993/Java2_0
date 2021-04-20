@@ -1,5 +1,9 @@
 package Present;
 
+/*
+Общий класс для указания общих параметров
+таких как: Имя, вес и цена.
+ */
 public class Surprise {
     private String name;
     private double weight;

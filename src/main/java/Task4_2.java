@@ -14,7 +14,7 @@ public class Task4_2 {
 
         Scanner scan = new Scanner(System.in);
 
-        // Создание сладостей и указание веса для подарка
+        // Создание сладостей и указание веса для подарка:
         System.out.println("Введите вес конфет Сникерс в кг: ");
         Candy snikers = new Candy("Сникерс", scan.nextDouble(), 550, "Нуга" );
 
@@ -32,23 +32,25 @@ public class Task4_2 {
 
         scan.close();
 
-
         // Подсчёт цены и веса:
         double totalPrice = snikers.getWeight() * snikers.getPrice() + mars.getWeight() * mars.getPrice() + dino.getWeight() * dino.getPrice() +
                 babaev.getWeight() * babaev.getPrice() + alpenGold.getWeight() * alpenGold.getPrice();
 
         double totalWeight = snikers.getWeight() + mars.getWeight() + dino.getWeight() + babaev.getWeight() + alpenGold.getWeight();
 
+        // Вывод информации о подарке, его цена и вес:
         System.out.println("Состав подарка:");
 
         Surprise [] boxSurprise = {snikers, mars, dino, babaev, alpenGold};
         for (Surprise box : boxSurprise) {
+            // Проверка наличия сладостей в подарке и вывод их на экран:
             if (box.getWeight() != 0){
-                System.out.print(box.getName() + ": " + box.getWeight() + "кг");
+                System.out.print(box.toString());
             System.out.println();
             }
         }
 
+        // Проверка, что подарок не пустой и вывод обшщего веса и стоимости:
         if (totalPrice != 0 && totalWeight != 0){
         System.out.println("Общий вес: " + totalWeight + " кг");
         System.out.println("Общая стоимость: " + totalPrice + " рублей");
