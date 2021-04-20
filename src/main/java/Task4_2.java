@@ -40,12 +40,20 @@ public class Task4_2 {
         double totalWeight = snikers.getWeight() + mars.getWeight() + dino.getWeight() + babaev.getWeight() + alpenGold.getWeight();
 
         System.out.println("Состав подарка:");
+
         Surprise [] boxSurprise = {snikers, mars, dino, babaev, alpenGold};
         for (Surprise box : boxSurprise) {
-            System.out.println(box.toString());
+            if (box.getWeight() != 0){
+                System.out.print(box.getName() + ": " + box.getWeight() + "кг");
+            System.out.println();
+            }
         }
 
+        if (totalPrice != 0 && totalWeight != 0){
         System.out.println("Общий вес: " + totalWeight + " кг");
         System.out.println("Общая стоимость: " + totalPrice + " рублей");
+        } else{
+            System.out.println("Подарок пустой!");
+        }
     }
 }
