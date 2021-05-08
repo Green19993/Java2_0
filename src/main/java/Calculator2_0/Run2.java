@@ -1,9 +1,12 @@
-package Calculator;
+package Calculator2_0;
 
 import Calculator.Operations.*;
+import Calculator.Task5;
+import java.io.*;
 
-public class Run {
-    public static void main(String[] args){
+
+public class Run2 {
+    public static void main(String[] args) throws IOException {
         Task5 entryData = new Task5();
         entryData.entryNumbers();
         entryData.entryOperation();
@@ -11,11 +14,33 @@ public class Run {
         System.out.println("Введенные данные: ");
         System.out.println(entryData.getNumber1() + " " + entryData.getSymbol() + " " + entryData.getNumber2());
 
-        Run test = new Run();
+        // Задание №7:
+        // Запросим несуществующий файл с датой:
+        try {
+            File file = new File("C:\\Users\\User\\IdeaProjects\\Java2_0\\src\\main\\java\\ReadFile\\testTry.txt");
+            //создаем объект FileReader для объекта File
+            FileReader fr = new FileReader(file);
+            BufferedReader reader = new BufferedReader(fr);
+            // считаем сначала первую строку
+            String line = reader.readLine();
+            System.out.println("Дата создания калькулятора: " + line);
+        } catch (FileNotFoundException e) {
+            File file = new File("C:\\Users\\User\\IdeaProjects\\Java2_0\\src\\main\\java\\ReadFile\\catchFile.txt");
+            FileReader fr = new FileReader(file);
+            BufferedReader reader = new BufferedReader(fr);
+            String line = reader.readLine();
+
+            // Всегда будет считываться данный файл с датой 08.05.2021:
+            System.out.println("Дата создания калькулятора: " + line);
+        }
+
+        Calculator.Run test = new Calculator.Run();
         test.getOperation(entryData);
 
     }
+
     double res = 0;
+
     public void getOperation(Task5 entryData) {
 
         switch (entryData.getSymbol()) {
