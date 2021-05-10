@@ -1,13 +1,12 @@
 package Calculator2_0;
 
-import Calculator.Operations.*;
-import Calculator.Task5;
+import Calculator2_0.Operations.*;
 import java.io.*;
 
 
 public class Run2 {
     public static void main(String[] args) throws IOException {
-        Task5 entryData = new Task5();
+        Task7 entryData = new Task7();
         entryData.entryNumbers();
         entryData.entryOperation();
 
@@ -31,34 +30,33 @@ public class Run2 {
             String line = reader.readLine();
 
             // Всегда будет считываться данный файл с датой 08.05.2021:
-            System.out.println("Дата создания калькулятора: " + line);
+            System.out.println("Дата создания калькулятора: " + line + "\n");
         }
 
-        Calculator.Run test = new Calculator.Run();
+        Calculator2_0.Run2 test = new Calculator2_0.Run2();
         test.getOperation(entryData);
 
     }
 
-    double res = 0;
 
-    public void getOperation(Task5 entryData) {
+    public void getOperation(Task7 entryData) {
 
         switch (entryData.getSymbol()) {
             case '+':
                 Addition addition = new Addition(entryData.getNumber1(), entryData.getNumber2());
-                res = addition.rounding(addition.doOperation()); // вычисление суммы
+                addition.rounding(addition.doOperation()); // вычисление суммы
                 break;
             case '-':
                 Subtraction substraction = new Subtraction(entryData.getNumber1(), entryData.getNumber2());
-                res = substraction.rounding(substraction.doOperation());  // вычисление частного
+                substraction.rounding(substraction.doOperation());  // вычисление частного
                 break;
             case '*':
                 Multiplication multiplication = new Multiplication(entryData.getNumber1(), entryData.getNumber2());
-                res = multiplication.rounding(multiplication.doOperation()); // вычисление произведения
+                multiplication.rounding(multiplication.doOperation()); // вычисление произведения
                 break;
             case '/':
                 Division division = new Division(entryData.getNumber1(), entryData.getNumber2());
-                res = division.rounding(division.doOperation());  // вычисление разности
+                division.rounding(division.doOperation());  // вычисление разности
                 break;
             default:
                 System.out.println("неизвестная операция, введите снова");

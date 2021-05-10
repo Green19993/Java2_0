@@ -10,7 +10,7 @@ public class Operations {
         this.y = y;
     }
 
-    public double rounding (double res) {
+    public double rounding (double res){
         System.out.printf("Результат операции:\n%.4f", res);
         return res;
     }
