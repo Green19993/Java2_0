@@ -16,7 +16,7 @@ public class Run {
 
     }
     double res = 0;
-    public void getOperation(Task5 entryData) {
+    public void getOperation (Task5 entryData) {
 
         switch (entryData.getSymbol()) {
             case '+':
