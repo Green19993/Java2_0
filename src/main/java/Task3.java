@@ -89,6 +89,7 @@ public class Task3 {
             System.out.println("Укажите " + (i+1) + " элемент массива: ");
             array[i] = sc.nextLine();
         }
+
         // Нахождение самого длинного слова в массиве:
         String maxString = array[0];
         int maxIndex = 0;
